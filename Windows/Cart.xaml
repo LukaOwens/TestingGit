@@ -1,0 +1,27 @@
+﻿<Window x:Class="TechoLand.Windows.Cart"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TechoLand.Windows"
+        mc:Ignorable="d"
+        Title="Корзина" MinHeight="450" MinWidth="800" Height="494" Width="800" Background="#FFF9ED35" WindowStartupLocation="CenterScreen" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" FontFamily="Comic Sans MS" FontSize="18" Icon="/Windows/icon1.ico" Closed="Products_Closed" Loaded="Win_Load">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ListBox x:Name="Products" Margin="14,29,14,10" Grid.Row="1" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Background="#FFFCC369"/>
+        <TextBlock x:Name="Count" HorizontalAlignment="Left" Margin="14,4,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Товаров в корзине: " VerticalAlignment="Top" Width="295"/>
+        <Viewbox VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Stretch="Fill">
+            <Border Height ="135" Width="810">
+                <Grid>
+                    <Button Background="#FFFFC648" BorderThickness="5" BorderBrush="#FFE2A036" x:Name="Back" Content="Назад" Width="108" Height="49" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,17,0,0" Click="Back_Click"/>
+                    <Button Background="#FFFFC648" BorderThickness="5" BorderBrush="#FFE2A036" x:Name="PlaceOrder" Content="Заказать" Margin="618,17,0,0" Width="172" Height="49" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                    <Button Background="#FFFFC648" BorderThickness="5" BorderBrush="#FFE2A036" x:Name="Clear" Content="Очистить корзину" Margin="618,76,0,0" Width="172" Height="49" VerticalAlignment="Top" HorizontalAlignment="Left" Click="Clear_Click"/>
+                </Grid>
+            </Border>
+        </Viewbox>
+        <TextBlock x:Name="Amount" HorizontalAlignment="Left" Margin="309,4,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" Text="Сумма:"/>
+    </Grid>
+</Window>

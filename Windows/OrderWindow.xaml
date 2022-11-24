@@ -1,0 +1,31 @@
+﻿<Window x:Class="TechoLand.Windows.OrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TechoLand.Windows"
+        mc:Ignorable="d"
+        Title="Заказ" Height="450" Width="800" Background="#FFF9ED35" Closed="Products_Closed" Icon="/Windows/icon1.ico" FontFamily="Comic Sans MS" FontSize="20">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Viewbox Stretch="Fill" Grid.Row ="0" Margin="0,0,10,10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Grid>
+                <TextBlock HorizontalAlignment="Left" Margin="10,111,0,0" TextWrapping="Wrap" Text="Состав вашего заказа:" VerticalAlignment="Top" Height="28" Width="208"/>
+                <Button Background="#FFFFC648" BorderThickness="5" BorderBrush="#FFE2A036" x:Name="Order1" Content="Оформить заказ" Margin="614,10,0,0" Width="172" Height="49" VerticalAlignment="Top" HorizontalAlignment="Left" Click="PlaceOrder_Click"/>
+                <Button Background="#FFFFC648" BorderThickness="5" BorderBrush="#FFE2A036" x:Name="Back" Content="Назад" Margin="10,10,0,0" Width="108" Height="49" Click="Back_Click" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            </Grid>
+        </Viewbox>
+        <DataGrid AutoGenerateColumns="False" FontFamily="Timew New Roman" FontSize="16" x:Name="OrderTable" Margin="0,0,0,0" Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="№" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Артикль" Binding="{Binding Article}"/>
+                <DataGridTextColumn Header="Наименование" Binding="{Binding Title}"/>
+                <DataGridTextColumn Header="Кол-во" Binding="{Binding Count}"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Cost}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
